@@ -519,7 +519,7 @@ function Stats() {
 }
 
 function Counter({ value, prefix, suffix }: { value: number; prefix?: string; suffix?: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true });
   const mv = useMotionValue(0);
   const rounded = useTransform(mv, (v) => Math.round(v).toString());
