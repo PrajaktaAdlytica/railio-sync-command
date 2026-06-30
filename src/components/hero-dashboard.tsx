@@ -179,8 +179,8 @@ export function HeroDashboard() {
               ))}
             </div>
             {/* mini calendar */}
-            <div className="mt-3 grid grid-cols-14 gap-[3px]">
-              {Array.from({ length: 84 }).map((_, i) => {
+            <div className="mt-3 grid grid-cols-12 gap-[3px]">
+              {Array.from({ length: 72 }).map((_, i) => {
                 const intensity = (Math.sin(i * 0.7) + 1) / 2;
                 const op = 0.15 + intensity * 0.85;
                 return <div key={i} className="aspect-square rounded-[2px] bg-primary" style={{ opacity: op }} />;
