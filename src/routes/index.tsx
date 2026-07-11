@@ -11,8 +11,8 @@ import { Reveal } from "@/components/reveal";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Railio — Coordination infrastructure for regional rail" },
-      { name: "description", content: "Railio connects incident response, asset maintenance and crew scheduling into one platform for regional rail operators." },
+      { title: "RailiXa — Coordination infrastructure for regional rail" },
+      { name: "description", content: "RailiXa connects incident response, asset maintenance and crew scheduling into one platform for regional rail operators." },
     ],
   }),
   component: Index,
@@ -52,7 +52,7 @@ function Hero() {
               className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/80 px-3 py-1 text-xs font-medium text-muted-foreground shadow-card"
             >
               <span className="inline-flex h-1.5 w-1.5 rounded-full bg-accent pulse-dot" />
-              New · Railio 2026.1 release notes
+              New · RailiXa 2026.1 release notes
               <ArrowRight className="h-3 w-3" />
             </motion.div>
 
@@ -75,7 +75,7 @@ function Hero() {
               transition={{ duration: 0.7, delay: 0.15 }}
               className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted-foreground"
             >
-              Railio connects incident response, asset maintenance and crew scheduling
+              RailiXa connects incident response, asset maintenance and crew scheduling
               into one operational platform — so regional rail operators respond in
               minutes instead of hours.
             </motion.p>
@@ -194,19 +194,19 @@ function Products() {
   const items = [
     {
       icon: AlertTriangle,
-      name: "Railio Incidents",
+      name: "RailiXa Incidents",
       desc: "Real-time incident command. From first signal to resolution, every action timestamped, attributable and auditable.",
       bullets: ["Geo-aware dispatching", "Cause-code library", "Post-mortem timeline"],
     },
     {
       icon: Wrench,
-      name: "Railio Assets",
+      name: "RailiXa Assets",
       desc: "Condition-based maintenance for rolling stock, track and signalling. Plan with data, not with intuition.",
       bullets: ["Predictive thresholds", "Work-order orchestration", "Compliance evidence"],
     },
     {
       icon: Users,
-      name: "Railio Crew",
+      name: "RailiXa Crew",
       desc: "Live rostering that talks to operations. Reassign drivers and conductors with one tap when reality moves.",
       bullets: ["Fatigue & rest rules", "EU driving-time limits", "Mobile crew app"],
     },
@@ -222,7 +222,7 @@ function Products() {
               One platform. Three operational surfaces.
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Each Railio product is usable on its own. Together they remove the seams between
+              Each RailiXa product is usable on its own. Together they remove the seams between
               the control room, the depot and the cab.
             </p>
           </div>
@@ -550,7 +550,7 @@ function Testimonial() {
           <div className="mx-auto max-w-3xl">
             <Quote className="h-8 w-8 text-accent" />
             <p className="mt-6 text-2xl sm:text-3xl lg:text-[34px] leading-[1.25] font-medium tracking-tight text-balance">
-              "Before Railio, an overhead-line fault on RE 9 took forty minutes to localise and another hour to communicate. Now the depot, the duty manager and the next cab are aligned in under seven. The line is genuinely calmer."
+              "Before RailiXa, an overhead-line fault on RE 9 took forty minutes to localise and another hour to communicate. Now the depot, the duty manager and the next cab are aligned in under seven. The line is genuinely calmer."
             </p>
             <div className="mt-8 flex items-center gap-4 border-t border-white/10 pt-6">
               <div className="h-11 w-11 rounded-full bg-gradient-to-br from-white/20 to-white/5 border border-white/20" />
@@ -569,10 +569,10 @@ function Testimonial() {
 /* ---------------- FAQ ---------------- */
 function Faq() {
   const items = [
-    { q: "How does Railio integrate with our existing TMS or ERTMS layer?", a: "Railio sits above your TMS, ETCS/ERTMS and CMMS through a published REST + event API. We ship native connectors for the most common European stacks and a typed integration SDK for everything else." },
-    { q: "Is Railio aligned with EN 50126 / EN 50128?", a: "Yes. Railio's incident, change-management and traceability surfaces are designed to produce evidence directly consumable by RAMS assessors and national regulators." },
+    { q: "How does RailiXa integrate with our existing TMS or ERTMS layer?", a: "RailiXa sits above your TMS, ETCS/ERTMS and CMMS through a published REST + event API. We ship native connectors for the most common European stacks and a typed integration SDK for everything else." },
+    { q: "Is RailiXa aligned with EN 50126 / EN 50128?", a: "Yes. RailiXa's incident, change-management and traceability surfaces are designed to produce evidence directly consumable by RAMS assessors and national regulators." },
     { q: "Where is data hosted?", a: "Exclusively in the EU. Default region is Frankfurt with regional replicas in Warsaw and Stockholm. Customer-managed key options available on the Enterprise plan." },
-    { q: "Can we start with just one product?", a: "Yes. Most operators start with Railio Incidents, then layer Assets and Crew once the control-room workflows are stable." },
+    { q: "Can we start with just one product?", a: "Yes. Most operators start with RailiXa Incidents, then layer Assets and Crew once the control-room workflows are stable." },
     { q: "What does onboarding look like?", a: "A typical regional operator goes from kickoff to production cutover in 6–10 weeks, including data migration, role workshops and on-site shadowing of two duty shifts." },
   ];
   const [open, setOpen] = useState<number | null>(0);
@@ -634,7 +634,7 @@ function FinalCta() {
                 Ready to modernise regional<br/>rail operations?
               </h2>
               <p className="mt-4 max-w-xl text-muted-foreground">
-                See Railio running on a synthetic version of your network in a 30-minute working session.
+                See RailiXa running on a synthetic version of your network in a 30-minute working session.
               </p>
             </div>
             <div className="lg:col-span-4 flex lg:justify-end gap-3 flex-wrap">

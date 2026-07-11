@@ -8,8 +8,8 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/sign-in")({
   head: () => ({
     meta: [
-      { title: "Sign in — Railio" },
-      { name: "description", content: "Sign in to your Railio operations workspace." },
+      { title: "Sign in — RailiXa" },
+      { name: "description", content: "Sign in to your RailiXa operations workspace." },
     ],
   }),
   component: SignIn,
@@ -41,7 +41,7 @@ function SignIn() {
           <div className="hidden lg:flex h-full flex-col justify-between rounded-2xl bg-primary p-10 text-primary-foreground overflow-hidden relative">
             <div className="absolute inset-0 rail-grid opacity-20" />
             <div className="relative">
-              <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-foreground/55">Railio · Control room</span>
+              <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-foreground/55">RailiXa · Control room</span>
               <h2 className="mt-4 text-3xl xl:text-4xl font-semibold tracking-tight leading-tight text-balance">
                 Coordination<br/>infrastructure<br/>for regional rail.
               </h2>
@@ -67,7 +67,7 @@ function SignIn() {
         <Reveal delay={0.1}>
           <div className="mx-auto w-full max-w-md lg:max-w-none lg:mx-0">
             <div className="rounded-2xl border border-border bg-surface p-8 lg:p-10 shadow-card">
-              <h1 className="text-2xl font-semibold tracking-tight">Sign in to Railio</h1>
+              <h1 className="text-2xl font-semibold tracking-tight">Sign in to RailiXa</h1>
               <p className="mt-1.5 text-sm text-muted-foreground">Welcome back. Enter your operations credentials.</p>
 
               <motion.form initial={{ opacity: 0 }} animate={{ opacity: 1 }} onSubmit={onSubmit} className="mt-7 space-y-4">

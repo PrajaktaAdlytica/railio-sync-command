@@ -7,8 +7,8 @@ import { motion, AnimatePresence } from "motion/react";
 export const Route = createFileRoute("/request-demo")({
   head: () => ({
     meta: [
-      { title: "Request a demo — Railio" },
-      { name: "description", content: "See Railio running on a synthetic version of your network in a 30-minute working session." },
+      { title: "Request a demo — RailiXa" },
+      { name: "description", content: "See RailiXa running on a synthetic version of your network in a 30-minute working session." },
     ],
   }),
   component: RequestDemo,
@@ -43,10 +43,10 @@ function RequestDemo() {
           <Reveal>
             <span className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Request demo</span>
             <h1 className="mt-3 text-4xl sm:text-5xl font-semibold tracking-tight text-balance">
-              See Railio on a synthetic version of your network.
+              See RailiXa on a synthetic version of your network.
             </h1>
             <p className="mt-5 text-muted-foreground leading-relaxed">
-              A 30-minute working session with a Railio operations engineer. We come prepared with a model of
+              A 30-minute working session with a RailiXa operations engineer. We come prepared with a model of
               your lines, your incident types and your maintenance regime.
             </p>
             <ul className="mt-8 space-y-3">
@@ -86,7 +86,7 @@ function RequestDemo() {
                     </div>
                     <h2 className="mt-5 text-2xl font-semibold tracking-tight">Request received.</h2>
                     <p className="mt-2 text-muted-foreground max-w-md mx-auto">
-                      Thanks {form.name?.split(" ")[0] || "for reaching out"}. A Railio operations engineer
+                      Thanks {form.name?.split(" ")[0] || "for reaching out"}. A RailiXa operations engineer
                       will reply to <span className="text-foreground font-medium">{form.email || "you"}</span> within one business day.
                     </p>
                     <div className="mt-7 flex justify-center gap-3">

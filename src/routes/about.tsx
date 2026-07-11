@@ -5,8 +5,8 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Railio" },
-      { name: "description", content: "Railio is built in Poznań for European regional rail operators. Meet the team and the mission." },
+      { title: "About — RailiXa" },
+      { name: "description", content: "RailiXa is built in Poznań for European regional rail operators. Meet the team and the mission." },
     ],
   }),
   component: AboutPage,
@@ -22,7 +22,7 @@ function AboutPage() {
             Built in Poznań,<br/>for European regional rail.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-            Railio was founded by operations engineers and former duty managers who spent a decade watching
+            RailiXa was founded by operations engineers and former duty managers who spent a decade watching
             small faults turn into large delays. We believe regional rail deserves software with the same care
             as the rolling stock it coordinates.
           </p>
@@ -57,7 +57,7 @@ function AboutPage() {
               {[
                 { t: "Operators in the room", d: "Every feature is shaped with a real duty manager, not from a Figma file in isolation." },
                 { t: "Calm by default", d: "Software in a control room must reduce cognitive load, not compete for it." },
-                { t: "Evidence over claims", d: "Every change Railio makes leaves a record a regulator can read without translation." },
+                { t: "Evidence over claims", d: "Every change RailiXa makes leaves a record a regulator can read without translation." },
                 { t: "Sovereign by design", d: "European data, European hosting, European compliance — non-negotiable." },
               ].map((p, i) => (
                 <Reveal key={p.t} delay={i * 0.05}>
@@ -83,7 +83,7 @@ function AboutPage() {
                 of our customer workshops.
               </p>
               <address className="mt-6 not-italic text-sm text-foreground">
-                Railio sp. z o.o.<br />
+                RailiXa sp. z o.o.<br />
                 ul. Półwiejska 32<br />
                 61-888 Poznań, Poland
               </address>

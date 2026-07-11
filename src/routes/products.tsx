@@ -5,8 +5,8 @@ import { Reveal } from "@/components/reveal";
 export const Route = createFileRoute("/products")({
   head: () => ({
     meta: [
-      { title: "Products — Railio" },
-      { name: "description", content: "Railio Incidents, Assets and Crew — three operational surfaces on one platform for regional rail." },
+      { title: "Products — RailiXa" },
+      { name: "description", content: "RailiXa Incidents, Assets and Crew — three operational surfaces on one platform for regional rail." },
     ],
   }),
   component: ProductsPage,
@@ -16,7 +16,7 @@ const products = [
   {
     id: "incidents",
     icon: AlertTriangle,
-    name: "Railio Incidents",
+    name: "RailiXa Incidents",
     tag: "Real-time command",
     desc: "Bring the radio chatter, the geographic context and the response playbooks into a single, time-stamped incident record.",
     features: [
@@ -30,7 +30,7 @@ const products = [
   {
     id: "assets",
     icon: Wrench,
-    name: "Railio Assets",
+    name: "RailiXa Assets",
     tag: "Condition-based maintenance",
     desc: "Move rolling stock, track and signalling from interval-based maintenance to a condition-driven, evidence-backed plan.",
     features: [
@@ -44,7 +44,7 @@ const products = [
   {
     id: "crew",
     icon: Users,
-    name: "Railio Crew",
+    name: "RailiXa Crew",
     tag: "Live rostering",
     desc: "A rostering surface that actually talks to operations. Reassign drivers and conductors in seconds when reality moves.",
     features: [
@@ -67,7 +67,7 @@ function ProductsPage() {
             One platform.<br />Three operational surfaces.
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-            Each Railio product solves a real, painful problem on its own — and together they remove the seams
+            Each RailiXa product solves a real, painful problem on its own — and together they remove the seams
             between the control room, the depot and the cab.
           </p>
         </Reveal>

@@ -16,7 +16,7 @@ export function HeroDashboard() {
             <span className="h-2.5 w-2.5 rounded-full bg-[oklch(0.85_0.05_152)]" />
           </div>
           <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
-            <span className="rounded-md border border-border bg-surface px-2 py-0.5 font-mono">ops.railio.eu / control-room</span>
+            <span className="rounded-md border border-border bg-surface px-2 py-0.5 font-mono">ops.railixa.com / control-room</span>
           </div>
           <div className="w-12" />
         </div>

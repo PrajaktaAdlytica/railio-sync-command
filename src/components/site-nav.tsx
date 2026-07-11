@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { RailioLogo } from "./railio-logo";
+import { RailiXaLogo } from "./railixa-logo";
 
 const links = [
   { to: "/products", label: "Products" },
@@ -30,8 +30,8 @@ export function SiteNav() {
     >
       <div className="container-x flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <RailioLogo className="h-7 w-7" />
-          <span className="text-[17px] font-semibold tracking-tight text-foreground">Railio</span>
+          <RailiXaLogo className="h-7 w-7" />
+          <span className="text-[17px] font-semibold tracking-tight text-foreground">RailiXa</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">

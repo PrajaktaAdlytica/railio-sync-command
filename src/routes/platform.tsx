@@ -5,8 +5,8 @@ import { Layers, Database, Shield, Workflow, Globe, GitBranch, Lock, Cpu, ArrowR
 export const Route = createFileRoute("/platform")({
   head: () => ({
     meta: [
-      { title: "Platform — Railio" },
-      { name: "description", content: "The Railio platform: integration, security and architecture built for safety-critical rail operations." },
+      { title: "Platform — RailiXa" },
+      { name: "description", content: "The RailiXa platform: integration, security and architecture built for safety-critical rail operations." },
     ],
   }),
   component: PlatformPage,
@@ -31,7 +31,7 @@ function PlatformPage() {
             Infrastructure-grade foundations for safety-critical rail.
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-            Railio is not a dashboard bolted onto your TMS. It is the coordination layer that sits between your
+            RailiXa is not a dashboard bolted onto your TMS. It is the coordination layer that sits between your
             operational systems, your people and your regulator.
           </p>
         </Reveal>
@@ -130,7 +130,7 @@ function ArchDiagram() {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            {["Railio Incidents","Railio Assets","Railio Crew"].map((p) => (
+            {["RailiXa Incidents","RailiXa Assets","RailiXa Crew"].map((p) => (
               <div key={p} className={`${layer} bg-primary text-primary-foreground border-primary`}>
                 <div className="text-[11px] uppercase tracking-wider text-primary-foreground/60">Product</div>
                 <div className="font-semibold">{p}</div>
