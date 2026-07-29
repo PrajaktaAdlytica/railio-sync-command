@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Railixa motion reference comparison</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 28px;
+        background: #0b1118;
+        color: #f5f7f9;
+        font-family: Arial, sans-serif;
+      }
+      .eyebrow {
+        margin-bottom: 14px;
+        color: #d94f30;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .grid + .grid {
+        margin-top: 20px;
+      }
+      figure {
+        margin: 0;
+      }
+      figcaption {
+        margin-bottom: 10px;
+        color: #9ca9b5;
+        font-size: 14px;
+      }
+      img {
+        display: block;
+        width: 100%;
+        border: 1px solid #26303a;
+        border-radius: 10px;
+      }
+      .note {
+        padding: 16px;
+        border: 1px solid #26303a;
+        border-radius: 10px;
+        background: #101923;
+      }
+      .note strong {
+        font-size: 13px;
+      }
+      .note p {
+        margin: 7px 0 0;
+        color: #9ca9b5;
+        font-size: 13px;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="eyebrow">VISUAL QA · SOURCE AND IMPLEMENTATION</div>
+    <div class="grid">
+      <figure>
+        <figcaption>MotionSites reference · hierarchy / contrast / cinematic media</figcaption>
+        <img src="../../references/motionsites-home.png" alt="" />
+      </figure>
+      <figure>
+        <figcaption>Railixa · original rail-native interpretation</figcaption>
+        <img src="./railixa-entry-dark.png" alt="" />
+      </figure>
+    </div>
+    <div class="grid">
+      <div class="note">
+        <strong>Shared premium cues</strong>
+        <p>
+          Full-viewport media · oversized editorial type · disciplined accent color · restrained
+          controls · clear focal hierarchy.
+        </p>
+      </div>
+      <figure>
+        <figcaption>Railixa · final light handoff into existing system</figcaption>
+        <img src="./railixa-entry-final.png" alt="" />
+      </figure>
+    </div>
+  </body>
+</html>

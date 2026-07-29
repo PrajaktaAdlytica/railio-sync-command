@@ -44,7 +44,7 @@
 :root {
   --radius: 8px;
   /* Brand */
-  --background: oklch(0.972 0.003 247);    /* #F2F3F5 */
+  --background: oklch(0.972 0.003 247); /* #F2F3F5 */
   --foreground: oklch(0.18 0.02 250);
   --surface: oklch(1 0 0);
   --card: oklch(1 0 0);
@@ -52,7 +52,7 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.02 250);
 
-  --primary: oklch(0.32 0.05 248);         /* #1B3A57 deep steel blue */
+  --primary: oklch(0.32 0.05 248); /* #1B3A57 deep steel blue */
   --primary-foreground: oklch(0.98 0.003 247);
 
   --secondary: oklch(0.95 0.005 247);
@@ -61,11 +61,11 @@
   --muted: oklch(0.95 0.005 247);
   --muted-foreground: oklch(0.5 0.015 250);
 
-  --accent: oklch(0.64 0.18 35);           /* #D94F30 signal orange */
+  --accent: oklch(0.64 0.18 35); /* #D94F30 signal orange */
   --accent-foreground: oklch(0.99 0.003 247);
 
-  --success: oklch(0.58 0.13 152);         /* #2E8B57 */
-  --warning: oklch(0.74 0.14 75);          /* #D9A02E */
+  --success: oklch(0.58 0.13 152); /* #2E8B57 */
+  --warning: oklch(0.74 0.14 75); /* #D9A02E */
   --destructive: oklch(0.6 0.22 27);
   --destructive-foreground: oklch(0.99 0.003 247);
 
@@ -74,14 +74,14 @@
   --input: oklch(0.9 0.005 247);
   --ring: oklch(0.32 0.05 248);
 
-  --steel: oklch(0.22 0.03 250);           /* footer dark steel */
+  --steel: oklch(0.22 0.03 250); /* footer dark steel */
   --steel-foreground: oklch(0.92 0.005 247);
 
   /* Effects */
-  --shadow-card: 0 1px 2px rgba(15,23,42,0.04), 0 4px 14px -6px rgba(15,23,42,0.08);
-  --shadow-lift: 0 8px 30px -10px rgba(27,58,87,0.18), 0 2px 6px rgba(15,23,42,0.06);
-  --shadow-dash: 0 30px 80px -30px rgba(15,23,42,0.35), 0 10px 30px -15px rgba(27,58,87,0.18);
-  --grid-line: rgba(27,58,87,0.06);
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 14px -6px rgba(15, 23, 42, 0.08);
+  --shadow-lift: 0 8px 30px -10px rgba(27, 58, 87, 0.18), 0 2px 6px rgba(15, 23, 42, 0.06);
+  --shadow-dash: 0 30px 80px -30px rgba(15, 23, 42, 0.35), 0 10px 30px -15px rgba(27, 58, 87, 0.18);
+  --grid-line: rgba(27, 58, 87, 0.06);
 }
 
 .dark {
@@ -106,15 +106,34 @@
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01","cv11";
+    font-feature-settings: "ss01", "cv11";
   }
-  h1,h2,h3,h4 { letter-spacing: -0.02em; font-family: var(--font-display); }
+  h1,
+  h2,
+  h3,
+  h4 {
+    letter-spacing: -0.02em;
+    font-family: var(--font-display);
+  }
+  :focus-visible {
+    outline: 2px solid color-mix(in oklab, var(--color-accent) 78%, white);
+    outline-offset: 3px;
+  }
+  section {
+    scroll-margin-top: 5rem;
+  }
 }
 
 /* Subtle rail-grid background */
@@ -126,11 +145,210 @@
   background-position: -1px -1px;
 }
 
-@utility text-balance { text-wrap: balance; }
+@utility signal-grid {
+  background-image:
+    linear-gradient(to right, rgba(27, 58, 87, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(27, 58, 87, 0.055) 1px, transparent 1px),
+    radial-gradient(circle at 18% 22%, rgba(27, 58, 87, 0.09), transparent 24%),
+    radial-gradient(circle at 82% 68%, rgba(217, 79, 48, 0.075), transparent 20%);
+  background-size:
+    56px 56px,
+    56px 56px,
+    auto,
+    auto;
+  background-position:
+    -1px -1px,
+    -1px -1px,
+    center,
+    center;
+}
 
-@utility shadow-dash { box-shadow: var(--shadow-dash); }
-@utility shadow-lift { box-shadow: var(--shadow-lift); }
-@utility shadow-card { box-shadow: var(--shadow-card); }
+@utility signal-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    radial-gradient(circle at 70% 20%, rgba(217, 79, 48, 0.095), transparent 25%);
+  background-size:
+    64px 64px,
+    64px 64px,
+    auto;
+  background-position:
+    -1px -1px,
+    -1px -1px,
+    center;
+}
+
+@utility blueprint-grid {
+  background-color: oklch(0.965 0.012 244);
+  background-image:
+    linear-gradient(to right, rgba(27, 58, 87, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(27, 58, 87, 0.07) 1px, transparent 1px),
+    radial-gradient(circle at 78% 18%, rgba(48, 99, 142, 0.14), transparent 27%),
+    radial-gradient(circle at 12% 82%, rgba(217, 79, 48, 0.055), transparent 22%);
+  background-size:
+    36px 36px,
+    36px 36px,
+    auto,
+    auto;
+}
+
+@utility signal-wash {
+  background-color: oklch(0.976 0.012 58);
+  background-image:
+    radial-gradient(circle at 12% 22%, rgba(217, 79, 48, 0.12), transparent 26%),
+    radial-gradient(circle at 86% 70%, rgba(27, 58, 87, 0.09), transparent 24%),
+    linear-gradient(
+      118deg,
+      transparent 0 44%,
+      rgba(217, 79, 48, 0.035) 44% 45%,
+      transparent 45% 100%
+    );
+}
+
+@utility mint-wash {
+  background-color: oklch(0.978 0.01 158);
+  background-image:
+    radial-gradient(circle at 82% 18%, rgba(46, 139, 87, 0.11), transparent 25%),
+    radial-gradient(circle at 16% 78%, rgba(27, 58, 87, 0.075), transparent 23%),
+    linear-gradient(to right, rgba(46, 139, 87, 0.035) 1px, transparent 1px);
+  background-size:
+    auto,
+    auto,
+    72px 100%;
+}
+
+@utility paper-lines {
+  background-color: oklch(0.982 0.006 80);
+  background-image:
+    linear-gradient(to bottom, transparent 31px, rgba(27, 58, 87, 0.045) 32px),
+    radial-gradient(circle at 88% 12%, rgba(217, 79, 48, 0.085), transparent 22%);
+  background-size:
+    100% 32px,
+    auto;
+}
+
+@layer components {
+  .section-ice {
+    background-color: oklch(0.965 0.009 245);
+    background-image:
+      radial-gradient(circle at 8% 12%, rgba(27, 58, 87, 0.09), transparent 25%),
+      radial-gradient(circle at 92% 82%, rgba(83, 141, 174, 0.1), transparent 23%);
+  }
+
+  .section-signal {
+    background-color: oklch(0.978 0.01 58);
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(217, 79, 48, 0.1), transparent 26%),
+      radial-gradient(circle at 88% 74%, rgba(27, 58, 87, 0.075), transparent 25%);
+  }
+
+  .section-mint {
+    background-color: oklch(0.976 0.01 158);
+    background-image:
+      radial-gradient(circle at 85% 15%, rgba(46, 139, 87, 0.1), transparent 23%),
+      linear-gradient(to right, rgba(46, 139, 87, 0.03) 1px, transparent 1px);
+    background-size:
+      auto,
+      80px 100%;
+  }
+
+  .section-paper {
+    background-color: oklch(0.984 0.005 78);
+    background-image:
+      linear-gradient(to bottom, transparent 47px, rgba(27, 58, 87, 0.035) 48px),
+      radial-gradient(circle at 12% 86%, rgba(217, 79, 48, 0.06), transparent 20%);
+    background-size:
+      100% 48px,
+      auto;
+  }
+
+  .section-blueprint {
+    background-color: oklch(0.958 0.014 244);
+    background-image:
+      linear-gradient(to right, rgba(27, 58, 87, 0.055) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(27, 58, 87, 0.055) 1px, transparent 1px),
+      radial-gradient(circle at 80% 18%, rgba(27, 58, 87, 0.12), transparent 28%);
+    background-size:
+      40px 40px,
+      40px 40px,
+      auto;
+  }
+
+  .card-rail,
+  .card-rail-blue,
+  .card-rail-signal,
+  .card-rail-mint {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.88),
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 14px 40px -28px rgba(27, 58, 87, 0.34);
+    backdrop-filter: blur(14px) saturate(118%);
+  }
+
+  .card-rail {
+    background-image:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(247, 249, 251, 0.88)),
+      radial-gradient(circle at 100% 0%, rgba(27, 58, 87, 0.08), transparent 34%);
+  }
+
+  .card-rail-blue {
+    background-image:
+      radial-gradient(circle at 100% 0%, rgba(58, 112, 153, 0.13), transparent 36%),
+      linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(239, 246, 250, 0.9));
+  }
+
+  .card-rail-signal {
+    background-image:
+      radial-gradient(circle at 100% 0%, rgba(217, 79, 48, 0.13), transparent 34%),
+      linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(253, 246, 241, 0.9));
+  }
+
+  .card-rail-mint {
+    background-image:
+      radial-gradient(circle at 100% 0%, rgba(46, 139, 87, 0.12), transparent 35%),
+      linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(241, 249, 245, 0.9));
+  }
+
+  .card-rail:hover,
+  .card-rail-blue:hover,
+  .card-rail-signal:hover,
+  .card-rail-mint:hover {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.95),
+      0 18px 45px -28px rgba(27, 58, 87, 0.42);
+  }
+
+  .card-rail-night {
+    background-color: rgba(255, 255, 255, 0.055);
+    background-image:
+      radial-gradient(circle at 100% 0%, rgba(217, 79, 48, 0.14), transparent 34%),
+      linear-gradient(145deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 28px 70px -38px rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(14px) saturate(120%);
+  }
+}
+
+@utility section-fade {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility shadow-dash {
+  box-shadow: var(--shadow-dash);
+}
+@utility shadow-lift {
+  box-shadow: var(--shadow-lift);
+}
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
 
 @utility glass {
   background: color-mix(in oklab, white 70%, transparent);
@@ -145,7 +363,30 @@
 }
 
 @keyframes pulse-dot {
-  0%,100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
 }
-@utility pulse-dot { animation: pulse-dot 1.6s ease-in-out infinite; }
+@utility pulse-dot {
+  animation: pulse-dot 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

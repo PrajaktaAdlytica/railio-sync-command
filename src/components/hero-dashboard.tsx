@@ -16,7 +16,9 @@ export function HeroDashboard() {
             <span className="h-2.5 w-2.5 rounded-full bg-[oklch(0.85_0.05_152)]" />
           </div>
           <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
-            <span className="rounded-md border border-border bg-surface px-2 py-0.5 font-mono">ops.railixa.com / control-room</span>
+            <span className="rounded-md border border-border bg-surface px-2 py-0.5 font-mono">
+              ops.railixa.com / control-room
+            </span>
           </div>
           <div className="w-12" />
         </div>
@@ -32,16 +34,36 @@ export function HeroDashboard() {
                 <h3 className="text-[13px] font-semibold">Live incident feed</h3>
               </div>
               <span className="inline-flex items-center gap-1.5 text-[11px] text-muted-foreground">
-                <span className="h-1.5 w-1.5 rounded-full bg-[oklch(0.65_0.18_27)] pulse-dot" />
-                3 active
+                <span className="h-1.5 w-1.5 rounded-full bg-[oklch(0.65_0.18_27)] pulse-dot" />3
+                active
               </span>
             </div>
 
             <div className="mt-3 space-y-2">
               {[
-                { sev: "P1", line: "RE 9 · Poznań ↔ Zbąszynek", t: "Signal failure · KM 42.6", min: "12m", color: "bg-accent/12 text-accent border-accent/25" },
-                { sev: "P2", line: "S 5 · Wrocław Główny", t: "Track circuit anomaly", min: "27m", color: "bg-[oklch(0.95_0.08_75)] text-[oklch(0.45_0.14_70)] border-[oklch(0.88_0.09_75)]" },
-                { sev: "P3", line: "Depot · Krzesiny", t: "Brake-pad threshold reached", min: "41m", color: "bg-[oklch(0.95_0.04_152)] text-[oklch(0.42_0.1_152)] border-[oklch(0.88_0.05_152)]" },
+                {
+                  sev: "P1",
+                  line: "RE 9 · Poznań ↔ Zbąszynek",
+                  t: "Signal failure · KM 42.6",
+                  min: "12m",
+                  color: "bg-accent/12 text-accent border-accent/25",
+                },
+                {
+                  sev: "P2",
+                  line: "S 5 · Wrocław Główny",
+                  t: "Track circuit anomaly",
+                  min: "27m",
+                  color:
+                    "bg-[oklch(0.95_0.08_75)] text-[oklch(0.45_0.14_70)] border-[oklch(0.88_0.09_75)]",
+                },
+                {
+                  sev: "P3",
+                  line: "Depot · Krzesiny",
+                  t: "Brake-pad threshold reached",
+                  min: "41m",
+                  color:
+                    "bg-[oklch(0.95_0.04_152)] text-[oklch(0.42_0.1_152)] border-[oklch(0.88_0.05_152)]",
+                },
               ].map((i, idx) => (
                 <motion.div
                   key={i.sev + idx}
@@ -51,9 +73,15 @@ export function HeroDashboard() {
                   className="flex items-center justify-between rounded-lg border border-border/70 bg-surface px-3 py-2.5"
                 >
                   <div className="flex items-center gap-3 min-w-0">
-                    <span className={`shrink-0 rounded border px-1.5 py-0.5 text-[10px] font-semibold ${i.color}`}>{i.sev}</span>
+                    <span
+                      className={`shrink-0 rounded border px-1.5 py-0.5 text-[10px] font-semibold ${i.color}`}
+                    >
+                      {i.sev}
+                    </span>
                     <div className="min-w-0">
-                      <div className="truncate text-[12.5px] font-medium text-foreground">{i.line}</div>
+                      <div className="truncate text-[12.5px] font-medium text-foreground">
+                        {i.line}
+                      </div>
                       <div className="truncate text-[11px] text-muted-foreground">{i.t}</div>
                     </div>
                   </div>
@@ -78,8 +106,16 @@ export function HeroDashboard() {
                     <stop offset="1" stopColor="#1B3A57" stopOpacity="0" />
                   </linearGradient>
                 </defs>
-                <path d="M0,45 L24,38 L48,42 L72,30 L96,33 L120,22 L144,28 L168,18 L192,24 L216,14 L240,20 L264,12 L288,16 L320,9 L320,60 L0,60 Z" fill="url(#g1)" />
-                <path d="M0,45 L24,38 L48,42 L72,30 L96,33 L120,22 L144,28 L168,18 L192,24 L216,14 L240,20 L264,12 L288,16 L320,9" fill="none" stroke="#1B3A57" strokeWidth="1.5" />
+                <path
+                  d="M0,45 L24,38 L48,42 L72,30 L96,33 L120,22 L144,28 L168,18 L192,24 L216,14 L240,20 L264,12 L288,16 L320,9 L320,60 L0,60 Z"
+                  fill="url(#g1)"
+                />
+                <path
+                  d="M0,45 L24,38 L48,42 L72,30 L96,33 L120,22 L144,28 L168,18 L192,24 L216,14 L240,20 L264,12 L288,16 L320,9"
+                  fill="none"
+                  stroke="#1B3A57"
+                  strokeWidth="1.5"
+                />
               </svg>
             </div>
           </div>
@@ -135,7 +171,12 @@ export function HeroDashboard() {
             </div>
             <div className="mt-3 grid grid-cols-12 gap-1">
               {Array.from({ length: 60 }).map((_, i) => {
-                const tone = i % 11 === 0 ? "bg-accent/70" : i % 5 === 0 ? "bg-[oklch(0.74_0.14_75)]/70" : "bg-primary/70";
+                const tone =
+                  i % 11 === 0
+                    ? "bg-accent/70"
+                    : i % 5 === 0
+                      ? "bg-[oklch(0.74_0.14_75)]/70"
+                      : "bg-primary/70";
                 return (
                   <motion.div
                     key={i}
@@ -148,9 +189,18 @@ export function HeroDashboard() {
               })}
             </div>
             <div className="mt-3 flex items-center gap-3 text-[10.5px] text-muted-foreground">
-              <span className="inline-flex items-center gap-1"><span className="h-2 w-2 rounded-sm bg-primary/70" />On duty</span>
-              <span className="inline-flex items-center gap-1"><span className="h-2 w-2 rounded-sm bg-[oklch(0.74_0.14_75)]/70" />Break</span>
-              <span className="inline-flex items-center gap-1"><span className="h-2 w-2 rounded-sm bg-accent/70" />Standby</span>
+              <span className="inline-flex items-center gap-1">
+                <span className="h-2 w-2 rounded-sm bg-primary/70" />
+                On duty
+              </span>
+              <span className="inline-flex items-center gap-1">
+                <span className="h-2 w-2 rounded-sm bg-[oklch(0.74_0.14_75)]/70" />
+                Break
+              </span>
+              <span className="inline-flex items-center gap-1">
+                <span className="h-2 w-2 rounded-sm bg-accent/70" />
+                Standby
+              </span>
             </div>
           </div>
 
@@ -171,8 +221,13 @@ export function HeroDashboard() {
                 { k: "MTBF", v: "1,820h", d: "+62h", up: true },
                 { k: "Open work orders", v: "37", d: "-8", up: true },
               ].map((s) => (
-                <div key={s.k} className="rounded-lg border border-border/70 bg-[oklch(0.985_0.003_247)] px-3 py-2.5">
-                  <div className="text-[10.5px] uppercase tracking-wider text-muted-foreground">{s.k}</div>
+                <div
+                  key={s.k}
+                  className="rounded-lg border border-border/70 bg-[oklch(0.985_0.003_247)] px-3 py-2.5"
+                >
+                  <div className="text-[10.5px] uppercase tracking-wider text-muted-foreground">
+                    {s.k}
+                  </div>
                   <div className="mt-1 text-lg font-semibold tracking-tight">{s.v}</div>
                   <div className="text-[11px] text-[oklch(0.45_0.13_152)] font-medium">{s.d}</div>
                 </div>
@@ -183,7 +238,13 @@ export function HeroDashboard() {
               {Array.from({ length: 72 }).map((_, i) => {
                 const intensity = (Math.sin(i * 0.7) + 1) / 2;
                 const op = 0.15 + intensity * 0.85;
-                return <div key={i} className="aspect-square rounded-[2px] bg-primary" style={{ opacity: op }} />;
+                return (
+                  <div
+                    key={i}
+                    className="aspect-square rounded-[2px] bg-primary"
+                    style={{ opacity: op }}
+                  />
+                );
               })}
             </div>
           </div>
