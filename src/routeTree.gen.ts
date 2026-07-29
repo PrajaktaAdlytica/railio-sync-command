@@ -9,31 +9,23 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SignInRouteImport } from './routes/sign-in'
-import { Route as RequestDemoRouteImport } from './routes/request-demo'
-import { Route as ProductsRouteImport } from './routes/products'
-import { Route as PlatformRouteImport } from './routes/platform'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as PlatformRouteImport } from './routes/platform'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ProductsRouteImport } from './routes/products'
+import { Route as RequestDemoRouteImport } from './routes/request-demo'
+import { Route as SecurityRouteImport } from './routes/security'
+import { Route as SignInRouteImport } from './routes/sign-in'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as ProductsIndexRouteImport } from './routes/products.index'
+import { Route as ProductsAssetsRouteImport } from './routes/products.assets'
+import { Route as ProductsCrewRouteImport } from './routes/products.crew'
+import { Route as ProductsIncidentsRouteImport } from './routes/products.incidents'
 
-const SignInRoute = SignInRouteImport.update({
-  id: '/sign-in',
-  path: '/sign-in',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RequestDemoRoute = RequestDemoRouteImport.update({
-  id: '/request-demo',
-  path: '/request-demo',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProductsRoute = ProductsRouteImport.update({
-  id: '/products',
-  path: '/products',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlatformRoute = PlatformRouteImport.update({
-  id: '/platform',
-  path: '/platform',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -41,36 +33,106 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
+const PlatformRoute = PlatformRouteImport.update({
+  id: '/platform',
+  path: '/platform',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RequestDemoRoute = RequestDemoRouteImport.update({
+  id: '/request-demo',
+  path: '/request-demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecurityRoute = SecurityRouteImport.update({
+  id: '/security',
+  path: '/security',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignInRoute = SignInRouteImport.update({
+  id: '/sign-in',
+  path: '/sign-in',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsIndexRoute = ProductsIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => ProductsRoute,
+} as any)
+const ProductsAssetsRoute = ProductsAssetsRouteImport.update({
+  id: '/assets',
+  path: '/assets',
+  getParentRoute: () => ProductsRoute,
+} as any)
+const ProductsCrewRoute = ProductsCrewRouteImport.update({
+  id: '/crew',
+  path: '/crew',
+  getParentRoute: () => ProductsRoute,
+} as any)
+const ProductsIncidentsRoute = ProductsIncidentsRouteImport.update({
+  id: '/incidents',
+  path: '/incidents',
+  getParentRoute: () => ProductsRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/platform': typeof PlatformRoute
-  '/products': typeof ProductsRoute
+  '/privacy': typeof PrivacyRoute
+  '/products': typeof ProductsRouteWithChildren
   '/request-demo': typeof RequestDemoRoute
+  '/security': typeof SecurityRoute
   '/sign-in': typeof SignInRoute
+  '/terms': typeof TermsRoute
+  '/products/assets': typeof ProductsAssetsRoute
+  '/products/crew': typeof ProductsCrewRoute
+  '/products/incidents': typeof ProductsIncidentsRoute
+  '/products/': typeof ProductsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/platform': typeof PlatformRoute
-  '/products': typeof ProductsRoute
+  '/privacy': typeof PrivacyRoute
   '/request-demo': typeof RequestDemoRoute
+  '/security': typeof SecurityRoute
   '/sign-in': typeof SignInRoute
+  '/terms': typeof TermsRoute
+  '/products/assets': typeof ProductsAssetsRoute
+  '/products/crew': typeof ProductsCrewRoute
+  '/products/incidents': typeof ProductsIncidentsRoute
+  '/products': typeof ProductsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/platform': typeof PlatformRoute
-  '/products': typeof ProductsRoute
+  '/privacy': typeof PrivacyRoute
+  '/products': typeof ProductsRouteWithChildren
   '/request-demo': typeof RequestDemoRoute
+  '/security': typeof SecurityRoute
   '/sign-in': typeof SignInRoute
+  '/terms': typeof TermsRoute
+  '/products/assets': typeof ProductsAssetsRoute
+  '/products/crew': typeof ProductsCrewRoute
+  '/products/incidents': typeof ProductsIncidentsRoute
+  '/products/': typeof ProductsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -78,58 +140,66 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/platform'
+    | '/privacy'
     | '/products'
     | '/request-demo'
+    | '/security'
     | '/sign-in'
+    | '/terms'
+    | '/products/assets'
+    | '/products/crew'
+    | '/products/incidents'
+    | '/products/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/platform' | '/products' | '/request-demo' | '/sign-in'
+  to:
+    | '/'
+    | '/about'
+    | '/platform'
+    | '/privacy'
+    | '/request-demo'
+    | '/security'
+    | '/sign-in'
+    | '/terms'
+    | '/products/assets'
+    | '/products/crew'
+    | '/products/incidents'
+    | '/products'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/platform'
+    | '/privacy'
     | '/products'
     | '/request-demo'
+    | '/security'
     | '/sign-in'
+    | '/terms'
+    | '/products/assets'
+    | '/products/crew'
+    | '/products/incidents'
+    | '/products/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   PlatformRoute: typeof PlatformRoute
-  ProductsRoute: typeof ProductsRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ProductsRoute: typeof ProductsRouteWithChildren
   RequestDemoRoute: typeof RequestDemoRoute
+  SecurityRoute: typeof SecurityRoute
   SignInRoute: typeof SignInRoute
+  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sign-in': {
-      id: '/sign-in'
-      path: '/sign-in'
-      fullPath: '/sign-in'
-      preLoaderRoute: typeof SignInRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/request-demo': {
-      id: '/request-demo'
-      path: '/request-demo'
-      fullPath: '/request-demo'
-      preLoaderRoute: typeof RequestDemoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/products': {
-      id: '/products'
-      path: '/products'
-      fullPath: '/products'
-      preLoaderRoute: typeof ProductsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/platform': {
-      id: '/platform'
-      path: '/platform'
-      fullPath: '/platform'
-      preLoaderRoute: typeof PlatformRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -139,24 +209,125 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/platform': {
+      id: '/platform'
+      path: '/platform'
+      fullPath: '/platform'
+      preLoaderRoute: typeof PlatformRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/request-demo': {
+      id: '/request-demo'
+      path: '/request-demo'
+      fullPath: '/request-demo'
+      preLoaderRoute: typeof RequestDemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/security': {
+      id: '/security'
+      path: '/security'
+      fullPath: '/security'
+      preLoaderRoute: typeof SecurityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sign-in': {
+      id: '/sign-in'
+      path: '/sign-in'
+      fullPath: '/sign-in'
+      preLoaderRoute: typeof SignInRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/': {
+      id: '/products/'
+      path: '/'
+      fullPath: '/products/'
+      preLoaderRoute: typeof ProductsIndexRouteImport
+      parentRoute: typeof ProductsRoute
+    }
+    '/products/assets': {
+      id: '/products/assets'
+      path: '/assets'
+      fullPath: '/products/assets'
+      preLoaderRoute: typeof ProductsAssetsRouteImport
+      parentRoute: typeof ProductsRoute
+    }
+    '/products/crew': {
+      id: '/products/crew'
+      path: '/crew'
+      fullPath: '/products/crew'
+      preLoaderRoute: typeof ProductsCrewRouteImport
+      parentRoute: typeof ProductsRoute
+    }
+    '/products/incidents': {
+      id: '/products/incidents'
+      path: '/incidents'
+      fullPath: '/products/incidents'
+      preLoaderRoute: typeof ProductsIncidentsRouteImport
+      parentRoute: typeof ProductsRoute
     }
   }
 }
+
+interface ProductsRouteChildren {
+  ProductsAssetsRoute: typeof ProductsAssetsRoute
+  ProductsCrewRoute: typeof ProductsCrewRoute
+  ProductsIncidentsRoute: typeof ProductsIncidentsRoute
+  ProductsIndexRoute: typeof ProductsIndexRoute
+}
+
+const ProductsRouteChildren: ProductsRouteChildren = {
+  ProductsAssetsRoute: ProductsAssetsRoute,
+  ProductsCrewRoute: ProductsCrewRoute,
+  ProductsIncidentsRoute: ProductsIncidentsRoute,
+  ProductsIndexRoute: ProductsIndexRoute,
+}
+
+const ProductsRouteWithChildren = ProductsRoute._addFileChildren(
+  ProductsRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   PlatformRoute: PlatformRoute,
-  ProductsRoute: ProductsRoute,
+  PrivacyRoute: PrivacyRoute,
+  ProductsRoute: ProductsRouteWithChildren,
   RequestDemoRoute: RequestDemoRoute,
+  SecurityRoute: SecurityRoute,
   SignInRoute: SignInRoute,
+  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

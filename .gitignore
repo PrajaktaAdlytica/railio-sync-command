@@ -30,3 +30,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local high-resolution motion render intermediates
+qa/motion/frame-*.png
+qa/motion/railixa-entry-master.mp4
+.vercel
+.env*

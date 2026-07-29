@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Railixa mobile QA</title>
+    <style>
+      body {
+        margin: 0;
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        overflow: hidden;
+        background: #0b1118;
+        color: #f6f8fa;
+        font-family: Arial, sans-serif;
+      }
+      .label {
+        position: fixed;
+        top: 24px;
+        left: 28px;
+        color: #d94f30;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+      }
+      .device {
+        width: 390px;
+        height: 844px;
+        overflow: hidden;
+        border: 1px solid #35414c;
+        border-radius: 28px;
+        background: white;
+        box-shadow: 0 34px 90px rgba(0, 0, 0, 0.45);
+        transform: scale(0.72);
+      }
+      iframe {
+        width: 390px;
+        height: 844px;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="label">MOBILE QA · 390 × 844</div>
+    <div class="device">
+      <iframe src="http://127.0.0.1:4176/" title="Railixa mobile preview"></iframe>
+    </div>
+  </body>
+</html>
