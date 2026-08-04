@@ -5,6 +5,7 @@ import { RailixaLogo } from "./railixa-logo";
 
 const links = [
   { to: "/platform", label: "Platform" },
+  { to: "/news/funding-announcement", label: "Funding" },
   { to: "/about", label: "About" },
 ] as const;
 

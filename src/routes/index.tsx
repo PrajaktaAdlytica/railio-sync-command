@@ -19,6 +19,7 @@ import { Reveal } from "@/components/reveal";
 import { PageBackdrop } from "@/components/page-backdrop";
 import { CoordinationStory } from "@/components/coordination-story";
 import { EntryExperience } from "@/components/entry-experience";
+import { FundingAnnouncement } from "@/components/funding-announcement";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,6 +45,7 @@ function Index() {
       <CoordinationStory />
       <Products />
       <DashboardPreview />
+      <FundingAnnouncement />
       <Benefits />
       <Stats />
       <Testimonial />

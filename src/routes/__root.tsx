@@ -123,6 +123,21 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Railixa",
+              url: "https://railixa.com",
+              sameAs: [
+                "https://www.linkedin.com/company/railixa/",
+                "https://www.crunchbase.com/organization/railixa",
+              ],
+            }),
+          }}
+        />
       </head>
       <body>
         {children}
