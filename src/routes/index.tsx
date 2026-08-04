@@ -41,11 +41,11 @@ function Index() {
       <EntryExperience />
       <Hero />
       <TrustedBy />
+      <FundingAnnouncement />
       <Problem />
       <CoordinationStory />
       <Products />
       <DashboardPreview />
-      <FundingAnnouncement />
       <Benefits />
       <Stats />
       <Testimonial />
