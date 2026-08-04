@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as NewsRouteImport } from './routes/news'
 import { Route as PlatformRouteImport } from './routes/platform'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProductsRouteImport } from './routes/products'
@@ -18,6 +19,7 @@ import { Route as RequestDemoRouteImport } from './routes/request-demo'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as SignInRouteImport } from './routes/sign-in'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as NewsFundingAnnouncementRouteImport } from './routes/news.funding-announcement'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as ProductsAssetsRouteImport } from './routes/products.assets'
 import { Route as ProductsCrewRouteImport } from './routes/products.crew'
@@ -31,6 +33,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsRoute = NewsRouteImport.update({
+  id: '/news',
+  path: '/news',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlatformRoute = PlatformRouteImport.update({
@@ -68,6 +75,11 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NewsFundingAnnouncementRoute = NewsFundingAnnouncementRouteImport.update({
+  id: '/funding-announcement',
+  path: '/funding-announcement',
+  getParentRoute: () => NewsRoute,
+} as any)
 const ProductsIndexRoute = ProductsIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -92,6 +104,7 @@ const ProductsIncidentsRoute = ProductsIncidentsRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/news': typeof NewsRouteWithChildren
   '/platform': typeof PlatformRoute
   '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRouteWithChildren
@@ -99,6 +112,7 @@ export interface FileRoutesByFullPath {
   '/security': typeof SecurityRoute
   '/sign-in': typeof SignInRoute
   '/terms': typeof TermsRoute
+  '/news/funding-announcement': typeof NewsFundingAnnouncementRoute
   '/products/assets': typeof ProductsAssetsRoute
   '/products/crew': typeof ProductsCrewRoute
   '/products/incidents': typeof ProductsIncidentsRoute
@@ -107,12 +121,14 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/news': typeof NewsRouteWithChildren
   '/platform': typeof PlatformRoute
   '/privacy': typeof PrivacyRoute
   '/request-demo': typeof RequestDemoRoute
   '/security': typeof SecurityRoute
   '/sign-in': typeof SignInRoute
   '/terms': typeof TermsRoute
+  '/news/funding-announcement': typeof NewsFundingAnnouncementRoute
   '/products/assets': typeof ProductsAssetsRoute
   '/products/crew': typeof ProductsCrewRoute
   '/products/incidents': typeof ProductsIncidentsRoute
@@ -122,6 +138,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/news': typeof NewsRouteWithChildren
   '/platform': typeof PlatformRoute
   '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRouteWithChildren
@@ -129,6 +146,7 @@ export interface FileRoutesById {
   '/security': typeof SecurityRoute
   '/sign-in': typeof SignInRoute
   '/terms': typeof TermsRoute
+  '/news/funding-announcement': typeof NewsFundingAnnouncementRoute
   '/products/assets': typeof ProductsAssetsRoute
   '/products/crew': typeof ProductsCrewRoute
   '/products/incidents': typeof ProductsIncidentsRoute
@@ -139,6 +157,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/news'
     | '/platform'
     | '/privacy'
     | '/products'
@@ -146,6 +165,7 @@ export interface FileRouteTypes {
     | '/security'
     | '/sign-in'
     | '/terms'
+    | '/news/funding-announcement'
     | '/products/assets'
     | '/products/crew'
     | '/products/incidents'
@@ -154,12 +174,14 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/news'
     | '/platform'
     | '/privacy'
     | '/request-demo'
     | '/security'
     | '/sign-in'
     | '/terms'
+    | '/news/funding-announcement'
     | '/products/assets'
     | '/products/crew'
     | '/products/incidents'
@@ -168,6 +190,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/news'
     | '/platform'
     | '/privacy'
     | '/products'
@@ -175,6 +198,7 @@ export interface FileRouteTypes {
     | '/security'
     | '/sign-in'
     | '/terms'
+    | '/news/funding-announcement'
     | '/products/assets'
     | '/products/crew'
     | '/products/incidents'
@@ -184,6 +208,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  NewsRoute: typeof NewsRouteWithChildren
   PlatformRoute: typeof PlatformRoute
   PrivacyRoute: typeof PrivacyRoute
   ProductsRoute: typeof ProductsRouteWithChildren
@@ -207,6 +232,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news': {
+      id: '/news'
+      path: '/news'
+      fullPath: '/news'
+      preLoaderRoute: typeof NewsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/platform': {
@@ -258,6 +290,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/news/funding-announcement': {
+      id: '/news/funding-announcement'
+      path: '/funding-announcement'
+      fullPath: '/news/funding-announcement'
+      preLoaderRoute: typeof NewsFundingAnnouncementRouteImport
+      parentRoute: typeof NewsRoute
+    }
     '/products/': {
       id: '/products/'
       path: '/'
@@ -289,6 +328,16 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface NewsRouteChildren {
+  NewsFundingAnnouncementRoute: typeof NewsFundingAnnouncementRoute
+}
+
+const NewsRouteChildren: NewsRouteChildren = {
+  NewsFundingAnnouncementRoute: NewsFundingAnnouncementRoute,
+}
+
+const NewsRouteWithChildren = NewsRoute._addFileChildren(NewsRouteChildren)
+
 interface ProductsRouteChildren {
   ProductsAssetsRoute: typeof ProductsAssetsRoute
   ProductsCrewRoute: typeof ProductsCrewRoute
@@ -310,6 +359,7 @@ const ProductsRouteWithChildren = ProductsRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  NewsRoute: NewsRouteWithChildren,
   PlatformRoute: PlatformRoute,
   PrivacyRoute: PrivacyRoute,
   ProductsRoute: ProductsRouteWithChildren,
