@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -102,7 +103,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     links: [
       { rel: "icon", href: "/favicon.svg?v=railixa", type: "image/svg+xml" },
       { rel: "shortcut icon", href: "/favicon.svg?v=railixa", type: "image/svg+xml" },
-      { rel: "canonical", href: "https://railixa.com" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -119,10 +119,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+  const canonicalUrl = `https://railixa.com${pathname === "/" ? "" : pathname}`;
+
   return (
     <html lang="en">
       <head>
         <HeadContent />
+        <link rel="canonical" href={canonicalUrl} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

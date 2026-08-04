@@ -24,7 +24,6 @@ export const Route = createFileRoute("/news/funding-announcement")({
       },
       { property: "article:published_time", content: "2026-04-14" },
     ],
-    links: [{ rel: "canonical", href: "https://railixa.com/news/funding-announcement" }],
   }),
   component: FundingArticle,
 });
