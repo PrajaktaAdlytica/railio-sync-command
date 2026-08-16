@@ -120,19 +120,23 @@ function AboutPage() {
                 Office
               </span>
               <h2 className="mt-3 text-3xl lg:text-4xl font-semibold tracking-tight">
-                Poznań, Poland.
+                Sliema, Malta.
               </h2>
               <p className="mt-4 text-muted-foreground leading-relaxed max-w-md">
-                This demonstration uses a Polish office identity to make the company profile feel
+                This demonstration uses a Malta office identity to make the company profile feel
                 complete. The address below is illustrative and is not presented as a registered
                 office.
               </p>
               <address className="mt-6 not-italic text-sm text-foreground">
                 Railixa · demonstration office
                 <br />
-                ul. Kolejowa 12
+                9279 James Place
                 <br />
-                60-715 Poznań, Polska
+                Sliema, NO SLM 1011
+                <br />
+                Malta
+                <br />
+                Phone: 6784 4016
               </address>
               <div className="mt-6">
                 <Link

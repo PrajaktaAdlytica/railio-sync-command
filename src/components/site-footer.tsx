@@ -59,7 +59,13 @@ export function SiteFooter() {
             <p className="mt-6 text-xs text-steel-foreground/50">
               Railixa · demonstration company
               <br />
-              Poznań, Polska
+              9279 James Place
+              <br />
+              Sliema, NO SLM 1011
+              <br />
+              Malta
+              <br />
+              Phone: 6784 4016
             </p>
           </div>
 
