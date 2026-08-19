@@ -120,23 +120,25 @@ function AboutPage() {
                 Office
               </span>
               <h2 className="mt-3 text-3xl lg:text-4xl font-semibold tracking-tight">
-                Sliema, Malta.
+                Salt Lake City, United States.
               </h2>
               <p className="mt-4 text-muted-foreground leading-relaxed max-w-md">
-                This demonstration uses a Malta office identity to make the company profile feel
+                This demonstration uses a US office identity to make the company profile feel
                 complete. The address below is illustrative and is not presented as a registered
                 office.
               </p>
               <address className="mt-6 not-italic text-sm text-foreground">
                 Railixa · demonstration office
                 <br />
-                9279 James Place
+                6809 Crescent Loop
                 <br />
-                Sliema, NO SLM 1011
+                Salt Lake City, UT 84113
                 <br />
-                Malta
+                United States
                 <br />
-                Phone: 6784 4016
+                Phone: (385) 546-9672
+                <br />
+                Lat: 40.7534, Lng: -111.8822
               </address>
               <div className="mt-6">
                 <Link

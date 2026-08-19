@@ -59,13 +59,15 @@ export function SiteFooter() {
             <p className="mt-6 text-xs text-steel-foreground/50">
               Railixa · demonstration company
               <br />
-              9279 James Place
+              6809 Crescent Loop
               <br />
-              Sliema, NO SLM 1011
+              Salt Lake City, UT 84113
               <br />
-              Malta
+              United States
               <br />
-              Phone: 6784 4016
+              Phone: (385) 546-9672
+              <br />
+              Lat: 40.7534, Lng: -111.8822
             </p>
           </div>
 
